@@ -57,7 +57,8 @@ export const carrinhoStore = defineStore("carrinho", {
             if (
               this.pedidos[x][y].id == 6 ||
               this.pedidos[x][y].id == 0 ||
-              this.pedidos[x][y].id == 8
+              this.pedidos[x][y].id == 8 ||
+              this.pedidos[x][y].id == 10
             ) {
               this.pedidos[x] = [];
               this.pedidos = this.pedidos.filter((e) => e.length);
@@ -154,8 +155,8 @@ export const menuStore = defineStore("menu", {
   state: () => {
     return {
       pesoDoMilkshake: [
-        { nome: "Milk Shake: 350 ML", id: 8, preco: 10.0, hash: "" },
-        { nome: "Milk Shake: 600 ML", id: 8, preco: 13.0, hash: "" },
+        { nome: "Milk Shake 350ml", id: 8, preco: 10.0, hash: "" },
+        { nome: "Milk Shake 600ml", id: 8, preco: 13.0, hash: "" },
       ],
       sorvete: [
         { nome: "Sorvete de Pavê", id: 7, preco: 0.0, hash: "" },
@@ -186,25 +187,46 @@ export const menuStore = defineStore("menu", {
         { nome: "Sorvete de Delícia Abacaxi", id: 9, preco: 0.0, hash: "" },
       ],
       pesoDoAcai: [
-        { nome: "Peso Escolhido: 100g", preco: 5.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 150g", preco: 6.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 200g", preco: 8.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 250g", preco: 10.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 300g", preco: 12.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 350g", preco: 14.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 400g", preco: 16.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 450g", preco: 18.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 550g", preco: 22.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 600g", preco: 24.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 650g", preco: 26.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 700g", preco: 28.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 750g", preco: 29.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 800g", preco: 31.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 850g", preco: 33.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 900g", preco: 35.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 500g", preco: 19.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 950g", preco: 37.0, id: 0, hash: "" },
-        { nome: "Peso Escolhido: 1kg", preco: 38.0, id: 0, hash: "" },
+        { nome: "Açaí 100g", preco: 5.0, id: 0, hash: "" },
+        { nome: "Açaí 150g", preco: 6.0, id: 0, hash: "" },
+        { nome: "Açaí 200g", preco: 8.0, id: 0, hash: "" },
+        { nome: "Açaí 250g", preco: 10.0, id: 0, hash: "" },
+        { nome: "Açaí 300g", preco: 12.0, id: 0, hash: "" },
+        { nome: "Açaí 350g", preco: 14.0, id: 0, hash: "" },
+        { nome: "Açaí 400g", preco: 16.0, id: 0, hash: "" },
+        { nome: "Açaí 450g", preco: 18.0, id: 0, hash: "" },
+        { nome: "Açaí 550g", preco: 22.0, id: 0, hash: "" },
+        { nome: "Açaí 600g", preco: 24.0, id: 0, hash: "" },
+        { nome: "Açaí 650g", preco: 26.0, id: 0, hash: "" },
+        { nome: "Açaí 700g", preco: 28.0, id: 0, hash: "" },
+        { nome: "Açaí 750g", preco: 29.0, id: 0, hash: "" },
+        { nome: "Açaí 800g", preco: 31.0, id: 0, hash: "" },
+        { nome: "Açaí 850g", preco: 33.0, id: 0, hash: "" },
+        { nome: "Açaí 900g", preco: 35.0, id: 0, hash: "" },
+        { nome: "Açaí 500g", preco: 19.0, id: 0, hash: "" },
+        { nome: "Açaí 950g", preco: 37.0, id: 0, hash: "" },
+        { nome: "Açaí 1kg", preco: 38.0, id: 0, hash: "" },
+      ],
+      pesoDoSorvete: [
+        { nome: "Sorvete 100g", preco: 5.0, id: 10, hash: "" },
+        { nome: "Sorvete 150g", preco: 6.0, id: 10, hash: "" },
+        { nome: "Sorvete 200g", preco: 8.0, id: 10, hash: "" },
+        { nome: "Sorvete 250g", preco: 10.0, id: 10, hash: "" },
+        { nome: "Sorvete 300g", preco: 12.0, id: 10, hash: "" },
+        { nome: "Sorvete 350g", preco: 14.0, id: 10, hash: "" },
+        { nome: "Sorvete 400g", preco: 16.0, id: 10, hash: "" },
+        { nome: "Sorvete 450g", preco: 18.0, id: 10, hash: "" },
+        { nome: "Sorvete 550g", preco: 22.0, id: 10, hash: "" },
+        { nome: "Sorvete 600g", preco: 24.0, id: 10, hash: "" },
+        { nome: "Sorvete 650g", preco: 26.0, id: 10, hash: "" },
+        { nome: "Sorvete 700g", preco: 28.0, id: 10, hash: "" },
+        { nome: "Sorvete 750g", preco: 29.0, id: 10, hash: "" },
+        { nome: "Sorvete 800g", preco: 31.0, id: 10, hash: "" },
+        { nome: "Sorvete 850g", preco: 33.0, id: 10, hash: "" },
+        { nome: "Sorvete 900g", preco: 35.0, id: 10, hash: "" },
+        { nome: "Sorvete 500g", preco: 19.0, id: 10, hash: "" },
+        { nome: "Sorvete 950g", preco: 37.0, id: 10, hash: "" },
+        { nome: "Sorvete 1kg", preco: 38.0, id: 10, hash: "" },
       ],
       acais: [
         {

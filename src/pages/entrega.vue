@@ -19,7 +19,7 @@ export default {
           //console.log(carrinho.pedidos[index][item]);
           this.pedidoMontado += ` • ${carrinho.pedidos[index][item].nome}\n\n`;
         }
-        this.pedidoMontado += `---------------\n\n`;
+        this.pedidoMontado += `--------------------------\n\n`;
       }
 
       const bebidas = menu.bebida;
@@ -37,7 +37,7 @@ export default {
         for (let index in BebidasTemp) {
           this.pedidoMontado += ` • ${BebidasTemp[index].quantidade}x #${BebidasTemp[index].nome}\n\n`;
         }
-        this.pedidoMontado += `---------------\n`;
+        this.pedidoMontado += `--------------------------\n`;
       }
 
       this.pedidoMontado += `\n*Observações:*\n - ${this.carrinho.observacoes}\n`;
@@ -50,7 +50,7 @@ export default {
           if (this.carrinho.dadosPessoais.formaDePagamento == "Dinheiro") {
             this.pedidoMontado += `\n*Troco para:*\n - ${this.carrinho.dadosPessoais.troco}\n`;
           }
-          this.pedidoMontado += `\n---------------\n`;
+          this.pedidoMontado += `\n--------------------------\n`;
           this.pedidoMontado += `\n*Total:* _${this.carrinho.getValorDosPedidos}_\n`;
 
           console.log(this.pedidoMontado);
@@ -88,7 +88,7 @@ export default {
           if (this.carrinho.dadosPessoais.formaDePagamento == "Dinheiro") {
             this.pedidoMontado += `\n*Troco para:*\n - ${this.carrinho.dadosPessoais.troco}\n`;
           }
-          this.pedidoMontado += `\n---------------\n`;
+          this.pedidoMontado += `\n--------------------------\n`;
           this.pedidoMontado += `\n*Total:* _${this.carrinho.getValorDosPedidos}_\n`;
 
           console.log(this.pedidoMontado);

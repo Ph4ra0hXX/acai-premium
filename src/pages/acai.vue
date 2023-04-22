@@ -31,61 +31,61 @@ export default {
 
       console.log(acaiEscolhido.value.nome);
 
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 100g") {
+      if (acaiEscolhido.value.nome == "Açaí 100g") {
         quantidadeParaSelecionar.value = 4;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 150g") {
+      if (acaiEscolhido.value.nome == "Açaí 150g") {
         quantidadeParaSelecionar.value = 5;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 200g") {
+      if (acaiEscolhido.value.nome == "Açaí 200g") {
         quantidadeParaSelecionar.value = 6;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 250g") {
+      if (acaiEscolhido.value.nome == "Açaí 250g") {
         quantidadeParaSelecionar.value = 7;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 300g") {
+      if (acaiEscolhido.value.nome == "Açaí 300g") {
         quantidadeParaSelecionar.value = 8;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 350g") {
+      if (acaiEscolhido.value.nome == "Açaí 350g") {
         quantidadeParaSelecionar.value = 9;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 400g") {
+      if (acaiEscolhido.value.nome == "Açaí 400g") {
         quantidadeParaSelecionar.value = 10;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 450g") {
+      if (acaiEscolhido.value.nome == "Açaí 450g") {
         quantidadeParaSelecionar.value = 11;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 500g") {
+      if (acaiEscolhido.value.nome == "Açaí 500g") {
         quantidadeParaSelecionar.value = 12;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 550g") {
+      if (acaiEscolhido.value.nome == "Açaí 550g") {
         quantidadeParaSelecionar.value = 13;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 600g") {
+      if (acaiEscolhido.value.nome == "Açaí 600g") {
         quantidadeParaSelecionar.value = 14;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 650g") {
+      if (acaiEscolhido.value.nome == "Açaí 650g") {
         quantidadeParaSelecionar.value = 15;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 700g") {
+      if (acaiEscolhido.value.nome == "Açaí 700g") {
         quantidadeParaSelecionar.value = 16;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 750g") {
+      if (acaiEscolhido.value.nome == "Açaí 750g") {
         quantidadeParaSelecionar.value = 17;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 800g") {
+      if (acaiEscolhido.value.nome == "Açaí 800g") {
         quantidadeParaSelecionar.value = 18;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 850g") {
+      if (acaiEscolhido.value.nome == "Açaí 850g") {
         quantidadeParaSelecionar.value = 19;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 900g") {
+      if (acaiEscolhido.value.nome == "Açaí 900g") {
         quantidadeParaSelecionar.value = 20;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 950g") {
+      if (acaiEscolhido.value.nome == "Açaí 950g") {
         quantidadeParaSelecionar.value = 21;
       }
-      if (acaiEscolhido.value.nome == "Peso Escolhido: 1kg") {
+      if (acaiEscolhido.value.nome == "Açaí 1kg") {
         quantidadeParaSelecionar.value = 22;
       }
     });
@@ -139,7 +139,7 @@ export default {
           </option>
 
           <option v-for="peso in pesoDoAcai" :value="peso">
-            Açai de {{ peso.nome }} - R$: {{ peso.preco.toFixed(2) }}
+            {{ peso.nome }} - R$: {{ peso.preco.toFixed(2) }}
           </option>
         </select>
         <br />

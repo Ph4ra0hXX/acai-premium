@@ -102,13 +102,13 @@ export default {
             <div v-for="item in pedido">
               <br />
               <span
-                v-if="item.id == 0 || item.id == 8"
+                v-if="item.id == 0 || item.id == 8 || item.id == 10"
                 class="paypal__item-name"
                 >{{ item.nome }}</span
               >
 
               <span
-                v-if="item.id != 0 && item.id != 8"
+                v-if="item.id != 0 && item.id != 8 && item.id != 10"
                 @click="carrinho.excluirItem(item), mensagemDeRemover()"
                 class="paypal__item-descricao"
                 >+ {{ item.nome }}</span

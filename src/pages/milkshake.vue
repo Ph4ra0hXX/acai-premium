@@ -31,10 +31,10 @@ export default {
 
       console.log(acaiEscolhido.value.nome);
 
-      if (acaiEscolhido.value.nome == "Milk Shake: 350 ML") {
+      if (acaiEscolhido.value.nome == "Milk Shake 350ml") {
         quantidadeParaSelecionar.value = 2;
       }
-      if (acaiEscolhido.value.nome == "Milk Shake: 600 ML") {
+      if (acaiEscolhido.value.nome == "Milk Shake 600ml") {
         quantidadeParaSelecionar.value = 2;
       }
     });
@@ -88,7 +88,7 @@ export default {
           </option>
 
           <option v-for="peso in pesoDoAcai" :value="peso">
-            Milk Shake de {{ peso.nome }} - R$: {{ peso.preco.toFixed(2) }}
+            {{ peso.nome }} - R$: {{ peso.preco.toFixed(2) }}
           </option>
         </select>
         <br />
