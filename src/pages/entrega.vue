@@ -57,7 +57,9 @@ export default {
 
           this.pedidoMontado = encodeURIComponent(this.pedidoMontado);
 
-          // window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
+          carrinho.pedidos = [];
+
+          window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,
@@ -92,6 +94,8 @@ export default {
           console.log(this.pedidoMontado);
 
           this.pedidoMontado = encodeURIComponent(this.pedidoMontado);
+
+          carrinho.pedidos = [];
 
           window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
         } else {
@@ -293,7 +297,9 @@ export default {
           PIX caso tenha escolhido essa forma de pagamento.
         </p>
 
-        <button @click="finalizarPedido()" class="btn">finalizar</button>
+        <router-link to="/">
+          <button @click="finalizarPedido()" class="btn">finalizar</button>
+        </router-link>
       </div>
     </div>
   </div>

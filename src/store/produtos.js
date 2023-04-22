@@ -239,8 +239,6 @@ export const carrinhoStore = defineStore("carrinho", {
           }
         }
       }
-
-      console.log(this.pedidos);
     },
     atualizarValor() {
       const menu = menuStore();
@@ -251,8 +249,6 @@ export const carrinhoStore = defineStore("carrinho", {
         (sum, { preco, quantidade }) => sum + preco * quantidade,
         0
       );
-
-      console.log(this.valorBebidas);
     },
   },
   getters: {
