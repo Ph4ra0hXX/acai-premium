@@ -52,7 +52,7 @@ export default {
         this.pedidoMontado += `--------------------------\n`;
       }
 
-      //this.pedidoMontado += `\n*Observações:*\n - ${this.carrinho.observacoes}\n`;
+      this.pedidoMontado += `\n*Observações:*\n - ${this.carrinho.observacoes}\n`;
 
       if (this.carrinho.dadosPessoais.formaDeEntrega == "Vou buscar") {
         if (this.carrinho.dadosPessoais.nome != "") {
@@ -94,7 +94,7 @@ export default {
         ) {
           this.pedidoMontado += `\n*Nome:*\n - ${this.carrinho.dadosPessoais.nome}\n`;
           this.pedidoMontado += `\n*Rua:*\n - ${this.carrinho.dadosPessoais.rua}\n`;
-          this.pedidoMontado += `\n*Bairro:*\n - ${this.carrinho.dadosPessoais.bairro}\n`;
+          this.pedidoMontado += `\n*Bairro:*\n - ${this.carrinho.dadosPessoais.bairro.nome}\n`;
           this.pedidoMontado += `\n*Número:*\n - ${this.carrinho.dadosPessoais.numero}\n`;
           this.pedidoMontado += `\n*Ponto de referência:*\n - ${this.carrinho.dadosPessoais.referencia}\n`;
           this.pedidoMontado += `\n*Forma de entrega:*\n - ${this.carrinho.dadosPessoais.formaDeEntrega}\n`;
@@ -103,7 +103,10 @@ export default {
             this.pedidoMontado += `\n*Troco para:*\n - ${this.carrinho.dadosPessoais.troco}\n`;
           }
           this.pedidoMontado += `\n--------------------------\n`;
-          this.pedidoMontado += `\n*Total:* _${this.carrinho.getValorDosPedidos}_\n`;
+          this.pedidoMontado += `\n*Total:* _${(
+            Number(this.carrinho.getValorDosPedidos) +
+            Number(this.carrinho.dadosPessoais.bairro.preco)
+          ).toFixed(2)}_\n`;
 
           console.log(this.pedidoMontado);
 
@@ -219,7 +222,6 @@ export default {
           <div class="info">
             <h3>Bairro:</h3>
           </div>
-
           <select
             required
             v-model="carrinho.dadosPessoais.bairro"
@@ -229,7 +231,7 @@ export default {
               Escolha uma opção
             </option>
 
-            <option v-for="entrega in valorEntrega" :value="entrega.nome">
+            <option v-for="entrega in valorEntrega" :value="entrega">
               {{ entrega.nome }} - R$: {{ entrega.preco.toFixed(2) }}
             </option>
           </select>

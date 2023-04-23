@@ -6,6 +6,7 @@ export const carrinhoStore = defineStore("carrinho", {
       pedidos: [],
       valorBebidas: 0,
       valorDosPedidos: 0,
+      valorDaEntrega: 0,
       valorPedidosComQuantidade: 0,
       quandidadeDePedidos: 0,
       pedidosParaSomar: [],
@@ -14,7 +15,7 @@ export const carrinhoStore = defineStore("carrinho", {
       dadosPessoais: {
         nome: "",
         rua: "",
-        bairro: "",
+        bairro: [],
         numero: "",
         referencia: "",
         formaDeEntrega: "",
