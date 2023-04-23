@@ -17,7 +17,7 @@ export default {
     const cremes = ref(menu.cremes);
     const frutas = ref(menu.frutas);
     const acompanhamentos = ref(menu.acompanhamentos);
-    const coberturas = ref(menu.coberturas);
+    const coberturas = ref(menu.coberturasMilkShake);
 
     const quantidadeParaSelecionar = ref(0);
 
@@ -32,10 +32,10 @@ export default {
       console.log(acaiEscolhido.value.nome);
 
       if (acaiEscolhido.value.nome == "Milk Shake 350ml") {
-        quantidadeParaSelecionar.value = 2;
+        quantidadeParaSelecionar.value = 4;
       }
       if (acaiEscolhido.value.nome == "Milk Shake 600ml") {
-        quantidadeParaSelecionar.value = 2;
+        quantidadeParaSelecionar.value = 4;
       }
     });
 
@@ -97,12 +97,12 @@ export default {
         <!---------------------------->
 
         <div v-if="acaiEscolhido != 'Escolha um'">
-          <p id="quantidadeDeItens">
-            Monte seu milk shake com até
-            <span id="quantidadeEscolhida">{{ quantidadeParaSelecionar }}</span>
-            itens
-          </p>
           <strong id="categoria">Sorvete:</strong>
+          <p id="quantidadeDeItens">
+            Escolha até
+            <span id="quantidadeEscolhida">2</span>
+            sorvetes
+          </p>
           <div v-for="(item, index) in acais" :key="item">
             <label class="container-checkbox" id="textoPreco">
               <input
@@ -125,10 +125,35 @@ export default {
             <p id="itens"></p>
             <br />
           </div>
-
-          <p id="textoExtra">
-            *Com Chantininho, Chocolate, Granulado, Castanha, Amendoim etc.
+          <!---------------------------->
+          <strong id="categoria">Coberturas:</strong>
+          <p id="quantidadeDeItens">
+            Escolha até
+            <span id="quantidadeEscolhida">2</span>
+            coberturas
           </p>
+          <div v-for="(item, index) in coberturas" :key="item">
+            <label class="container-checkbox" id="textoPreco">
+              <input
+                type="checkbox"
+                class="checkbox1"
+                id="adicional"
+                :value="item"
+                v-model="pedidoTemp"
+                :disabled="
+                  pedidoTemp.length >= quantidadeParaSelecionar &&
+                  pedidoTemp.indexOf(item) === -1
+                "
+              />
+              <span class="checkmark"></span>
+            </label>
+            <label style="pointer-events: none" for="adicional">{{
+              item.nome
+            }}</label>
+            <label id="preco"></label>
+            <p id="itens"></p>
+            <br />
+          </div>
         </div>
       </div>
 

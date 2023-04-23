@@ -2,19 +2,31 @@
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
 import { carrinhoStore, menuStore } from "../store/produtos";
+
+import { useRouter } from "vue-router";
+
 export default {
   setup() {
     const carrinho = carrinhoStore();
     const toast = useToast();
+    const menu = menuStore();
+
+    const router = useRouter();
+
     const pedidoMontado = ref("");
 
-    const menu = menuStore();
+    const valorEntrega = ref(menu.valorEntrega);
+
+    const apesoEscolhido = ref(0);
 
     function finalizarPedido() {
       // console.log(carrinho.pedidos);
       this.pedidoMontado = "";
 
+      var numeroDoPedido = 1;
+
       for (var index in carrinho.pedidos) {
+        this.pedidoMontado += ` N° - ${numeroDoPedido++}\n\n`;
         for (var item in carrinho.pedidos[index]) {
           //console.log(carrinho.pedidos[index][item]);
           this.pedidoMontado += ` • ${carrinho.pedidos[index][item].nome}\n\n`;
@@ -33,14 +45,14 @@ export default {
       }
 
       if (BebidasTemp.length > 0) {
-        this.pedidoMontado += " *BEBIDAS:*\n\n";
+        this.pedidoMontado += ` N° - ${numeroDoPedido++}\n\n`;
         for (let index in BebidasTemp) {
           this.pedidoMontado += ` • ${BebidasTemp[index].quantidade}x #${BebidasTemp[index].nome}\n\n`;
         }
         this.pedidoMontado += `--------------------------\n`;
       }
 
-      this.pedidoMontado += `\n*Observações:*\n - ${this.carrinho.observacoes}\n`;
+      //this.pedidoMontado += `\n*Observações:*\n - ${this.carrinho.observacoes}\n`;
 
       if (this.carrinho.dadosPessoais.formaDeEntrega == "Vou buscar") {
         if (this.carrinho.dadosPessoais.nome != "") {
@@ -58,6 +70,8 @@ export default {
           this.pedidoMontado = encodeURIComponent(this.pedidoMontado);
 
           carrinho.pedidos = [];
+
+          router.push("/");
 
           window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
         } else {
@@ -97,6 +111,8 @@ export default {
 
           carrinho.pedidos = [];
 
+          router.push("/");
+
           window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
@@ -112,6 +128,8 @@ export default {
     return {
       carrinho,
       finalizarPedido,
+      valorEntrega,
+      apesoEscolhido,
     };
   },
 };
@@ -201,14 +219,21 @@ export default {
           <div class="info">
             <h3>Bairro:</h3>
           </div>
-          <div class="input-field">
-            <input
-              v-model="carrinho.dadosPessoais.bairro"
-              type="text"
-              id="card_number"
-              placeholder=""
-            />
-          </div>
+
+          <select
+            required
+            v-model="carrinho.dadosPessoais.bairro"
+            id="selectPeso"
+          >
+            <option selected value="Escolha um" disabled>
+              Escolha uma opção
+            </option>
+
+            <option v-for="entrega in valorEntrega" :value="entrega.nome">
+              {{ entrega.nome }} - R$: {{ entrega.preco.toFixed(2) }}
+            </option>
+          </select>
+          <br />
           <br />
           <div class="info">
             <h3>Número da Casa:</h3>
@@ -297,9 +322,7 @@ export default {
           PIX caso tenha escolhido essa forma de pagamento.
         </p>
 
-        <router-link to="/">
-          <button @click="finalizarPedido()" class="btn">finalizar</button>
-        </router-link>
+        <button @click="finalizarPedido()" class="btn">finalizar</button>
       </div>
     </div>
   </div>
