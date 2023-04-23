@@ -3,33 +3,7 @@ import { defineStore } from "pinia";
 export const carrinhoStore = defineStore("carrinho", {
   state: () => {
     return {
-      pedidos: [
-        [
-          { nome: "Açaí 150g", preco: 6, id: 0, hash: "GEH40CUp" },
-          {
-            nome: "Açaí Mesclado com Morango",
-            id: 1,
-            preco: 0,
-            hash: "5zKAuEUk",
-          },
-          { nome: "Creme de Nutella", id: 2, preco: 0, hash: "iscc5gXW" },
-          { nome: "Granola", id: 4, preco: 0, hash: "EIQa1Qw7" },
-          {
-            nome: "Cobertura de tutti-frutti",
-            id: 5,
-            preco: 0,
-            hash: "0OStjdUD",
-          },
-        ],
-        [
-          { nome: "Sorvete 150g", preco: 6, id: 10, hash: "yPU1ozGz" },
-          { nome: "Sorvete de Napolitano", id: 9, preco: 0, hash: "6vaT5tMB" },
-          { nome: "Creme de Nutella", id: 2, preco: 0, hash: "iscc5gXW" },
-          { nome: "Morango", id: 3, preco: 0, hash: "Y2ZfWgz3" },
-          { nome: "Ovomaltine", id: 4, preco: 0, hash: "RxXx4bWe" },
-          { nome: "Cobertura de nutela", id: 5, preco: 0, hash: "RrYVHcc2" },
-        ],
-      ],
+      pedidos: [],
       valorBebidas: 0,
       valorDosPedidos: 0,
       valorPedidosComQuantidade: 0,
