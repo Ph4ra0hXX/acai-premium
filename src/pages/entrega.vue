@@ -25,6 +25,9 @@ export default {
 
       var numeroDoPedido = 1;
 
+      this.pedidoMontado += `Açaí Premium\n\n`;
+      this.pedidoMontado += `--------------------------\n\n`;
+
       for (var index in carrinho.pedidos) {
         this.pedidoMontado += ` N° - ${numeroDoPedido++}\n\n`;
         for (var item in carrinho.pedidos[index]) {
