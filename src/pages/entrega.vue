@@ -73,7 +73,7 @@ export default {
 
           router.push("/");
 
-          window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
+          window.location.href = `https://wa.me/5588997070747?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,
@@ -116,7 +116,7 @@ export default {
 
           router.push("/");
 
-          window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
+          window.location.href = `https://wa.me/5588997070747?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,

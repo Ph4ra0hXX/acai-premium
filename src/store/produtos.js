@@ -281,12 +281,6 @@ export const menuStore = defineStore("menu", {
           hash: "",
         },
         {
-          nome: "Creme de Maracujá",
-          id: 2,
-          preco: 0.0,
-          hash: "",
-        },
-        {
           nome: "Creme de Ovomaltine",
           id: 2,
           preco: 0.0,
@@ -447,7 +441,7 @@ export const menuStore = defineStore("menu", {
           hash: "",
         },
         {
-          nome: "Sucribhos",
+          nome: "Sucrilhos",
           id: 4,
           preco: 0.0,
           hash: "",
@@ -471,7 +465,7 @@ export const menuStore = defineStore("menu", {
           hash: "",
         },
         {
-          nome: "Maschmebow",
+          nome: "Marshmallow",
           id: 4,
           preco: 0.0,
           hash: "",
