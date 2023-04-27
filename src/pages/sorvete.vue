@@ -41,52 +41,52 @@ export default {
         quantidadeParaSelecionar.value = 6;
       }
       if (acaiEscolhido.value.nome == "Sorvete 250g") {
-        quantidadeParaSelecionar.value = 7;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 300g") {
-        quantidadeParaSelecionar.value = 8;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 350g") {
-        quantidadeParaSelecionar.value = 9;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 400g") {
-        quantidadeParaSelecionar.value = 10;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 450g") {
-        quantidadeParaSelecionar.value = 11;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 500g") {
-        quantidadeParaSelecionar.value = 12;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 550g") {
-        quantidadeParaSelecionar.value = 13;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 600g") {
-        quantidadeParaSelecionar.value = 14;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 650g") {
-        quantidadeParaSelecionar.value = 15;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 700g") {
-        quantidadeParaSelecionar.value = 16;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 750g") {
-        quantidadeParaSelecionar.value = 17;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 800g") {
-        quantidadeParaSelecionar.value = 18;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 850g") {
-        quantidadeParaSelecionar.value = 19;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 900g") {
-        quantidadeParaSelecionar.value = 20;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 950g") {
-        quantidadeParaSelecionar.value = 21;
+        quantidadeParaSelecionar.value = 999;
       }
       if (acaiEscolhido.value.nome == "Sorvete 1kg") {
-        quantidadeParaSelecionar.value = 22;
+        quantidadeParaSelecionar.value = 999;
       }
     });
 
@@ -148,11 +148,22 @@ export default {
         <!---------------------------->
 
         <div v-if="acaiEscolhido != 'Escolha um'">
-          <p id="quantidadeDeItens">
-            Monte seu sorvete com até
-            <span id="quantidadeEscolhida">{{ quantidadeParaSelecionar }}</span>
-            itens
-          </p>
+          <div v-if="quantidadeParaSelecionar != 999">
+            <p id="quantidadeDeItens">
+              Monte seu sorvete com até
+              <span id="quantidadeEscolhida">{{
+                quantidadeParaSelecionar
+              }}</span>
+              itens
+            </p>
+          </div>
+          <div v-else>
+            <p id="quantidadeDeItens">
+              Monte seu açaí
+              <span id="quantidadeEscolhida">sem limite</span>
+              de itens
+            </p>
+          </div>
           <strong id="categoria">Sorvete:</strong>
           <div v-for="(item, index) in acais" :key="item">
             <label class="container-checkbox" id="textoPreco">
