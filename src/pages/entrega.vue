@@ -235,7 +235,7 @@ export default {
             </option>
 
             <option v-for="entrega in valorEntrega" :value="entrega">
-              {{ entrega.nome }} - R$: {{ entrega.preco.toFixed(2) }}
+              {{ entrega.nome }} - R$ {{ entrega.preco.toFixed(2) }}
             </option>
           </select>
           <br />
