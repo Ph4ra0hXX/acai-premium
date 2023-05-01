@@ -121,6 +121,7 @@ export default {
             <p id="itens"></p>
             <br />
           </div>
+          <!---------------------------->
           <strong id="categoria">Coberturas:</strong>
           <p id="quantidadeDeItens">
             Escolha até
@@ -149,7 +150,31 @@ export default {
             <p id="itens"></p>
             <br />
           </div>
+
           <!---------------------------->
+          <strong id="categoria">Frutas:</strong>
+          <div v-for="(item, index) in frutas" :key="item">
+            <label class="container-checkbox" id="textoPreco">
+              <input
+                type="checkbox"
+                class="checkbox1"
+                id="adicional"
+                :value="item"
+                v-model="pedidoTemp"
+                :disabled="
+                  pedidoTemp.length >= quantidadeParaSelecionar &&
+                  pedidoTemp.indexOf(item) === -1
+                "
+              />
+              <span class="checkmark"></span>
+            </label>
+            <label style="pointer-events: none" for="adicional">{{
+              item.nome
+            }}</label>
+            <label id="preco"></label>
+            <p id="itens"></p>
+            <br />
+          </div>
         </div>
       </div>
 

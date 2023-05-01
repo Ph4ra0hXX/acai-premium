@@ -534,12 +534,6 @@ export const menuStore = defineStore("menu", {
           hash: "",
         },
         {
-          nome: "Cobertura de nutela",
-          id: 5,
-          preco: 0.0,
-          hash: "",
-        },
-        {
           nome: "Cobertura de morango",
           id: 5,
           preco: 0.0,
