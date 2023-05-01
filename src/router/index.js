@@ -6,6 +6,7 @@ import Checkout from "../pages/checkout.vue";
 import Entrega from "../pages/entrega.vue";
 import Sorvete from "../pages/sorvete.vue";
 import Milkshake from "../pages/milkshake.vue";
+import Vitamina from "../pages/vitamina.vue";
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     path: "/sorvete",
     name: "sorvete",
     component: Sorvete,
+  },
+  {
+    path: "/vitamina",
+    name: "vitamina",
+    component: Vitamina,
   },
   {
     path: "/milkshake",

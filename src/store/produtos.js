@@ -134,6 +134,13 @@ export const produtosStore = defineStore("produto", {
           url: "/sorvete",
         },
         {
+          id: 6,
+          nome: "VITAMINA DE AÇAÍ",
+          img: "food6.webp",
+          descricao: "Monte do seu jeito",
+          url: "/vitamina",
+        },
+        {
           id: 4,
           nome: "MILKSHAKE",
           img: "food4.webp",
@@ -155,6 +162,10 @@ export const produtosStore = defineStore("produto", {
 export const menuStore = defineStore("menu", {
   state: () => {
     return {
+      pesoVitaminas: [
+        { nome: "Vitamina 350ml", id: 11, preco: 10.0, hash: "" },
+        { nome: "Vitamina 600ml", id: 11, preco: 13.0, hash: "" },
+      ],
       pesoDoMilkshake: [
         { nome: "Milk Shake 350ml", id: 8, preco: 10.0, hash: "" },
         { nome: "Milk Shake 600ml", id: 8, preco: 13.0, hash: "" },
@@ -473,6 +484,106 @@ export const menuStore = defineStore("menu", {
         {
           nome: "Chocopower",
           id: 4,
+          preco: 0.0,
+          hash: "",
+        },
+      ],
+      acompanhamentoVitaminas: [
+        {
+          nome: "Castanha",
+          id: 12,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Amendoim",
+          id: 12,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Granola",
+          id: 12,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Paçoquita",
+          id: 12,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Ovomaltine",
+          id: 12,
+          preco: 0.0,
+          hash: "",
+        },
+      ],
+      coberturaVitaminas: [
+        {
+          nome: "Cobertura de uva",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de mel",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de nutela",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de morango",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de chocolate",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de tutti-frutti",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de maracujá",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de doce de leite",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de frutas vermelhas",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de leite condensado",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de chocolate com menta",
+          id: 5,
           preco: 0.0,
           hash: "",
         },
