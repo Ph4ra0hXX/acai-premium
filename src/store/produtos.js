@@ -163,7 +163,11 @@ export const menuStore = defineStore("menu", {
   state: () => {
     return {
       pesoVitaminas: [
+        { nome: "Vitamina 300ml Tradicional", id: 11, preco: 10.0, hash: "" },
+        { nome: "Vitamina 300ml Turbinada", id: 11, preco: 12.0, hash: "" },
         { nome: "Vitamina 350ml", id: 11, preco: 10.0, hash: "" },
+        { nome: "Vitamina 500ml Tradicional", id: 11, preco: 13.0, hash: "" },
+        { nome: "Vitamina 500ml Turbinada", id: 11, preco: 15.0, hash: "" },
         { nome: "Vitamina 600ml", id: 11, preco: 13.0, hash: "" },
       ],
       pesoDoMilkshake: [
@@ -352,7 +356,7 @@ export const menuStore = defineStore("menu", {
         {
           nome: "Bis",
           id: 4,
-          preco: 0.0,
+          preco: 1.0,
           hash: "",
         },
         {
@@ -400,7 +404,7 @@ export const menuStore = defineStore("menu", {
         {
           nome: "Bombom",
           id: 4,
-          preco: 0.0,
+          preco: 1.0,
           hash: "",
         },
         {
@@ -460,7 +464,7 @@ export const menuStore = defineStore("menu", {
         {
           nome: "Batom Garoto",
           id: 4,
-          preco: 0.0,
+          preco: 1.5,
           hash: "",
         },
         {
