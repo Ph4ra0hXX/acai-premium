@@ -255,7 +255,7 @@ export default {
             <label style="pointer-events: none" for="adicional">{{
               item.nome
             }}</label>
-            <label id="preco"></label>
+            <label id="preco">R$: {{ item.preco.toFixed(2) }}</label>
             <p id="itens"></p>
             <br />
           </div>
