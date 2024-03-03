@@ -31,10 +31,10 @@ export default {
 
       console.log(acaiEscolhido.value.nome);
 
-      if (acaiEscolhido.value.nome == "Vitamina 350ml") {
+      if (acaiEscolhido.value.nome == "Vitamina 300ml Tradicional") {
         quantidadeParaSelecionar.value = 99;
       }
-      if (acaiEscolhido.value.nome == "Vitamina 600ml") {
+      if (acaiEscolhido.value.nome == "Vitamina 500ml Tradicional") {
         quantidadeParaSelecionar.value = 99;
       }
     });
