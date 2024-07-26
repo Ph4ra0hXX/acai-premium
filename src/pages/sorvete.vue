@@ -41,19 +41,19 @@ export default {
         quantidadeParaSelecionar.value = 6;
       }
       if (acaiEscolhido.value.nome == "Sorvete 250g") {
-        quantidadeParaSelecionar.value = 999;
+        quantidadeParaSelecionar.value = 8;
       }
       if (acaiEscolhido.value.nome == "Sorvete 300g") {
-        quantidadeParaSelecionar.value = 999;
+        quantidadeParaSelecionar.value = 8;
       }
       if (acaiEscolhido.value.nome == "Sorvete 350g") {
-        quantidadeParaSelecionar.value = 999;
+        quantidadeParaSelecionar.value = 10;
       }
       if (acaiEscolhido.value.nome == "Sorvete 400g") {
-        quantidadeParaSelecionar.value = 999;
+        quantidadeParaSelecionar.value = 10;
       }
       if (acaiEscolhido.value.nome == "Sorvete 450g") {
-        quantidadeParaSelecionar.value = 999;
+        quantidadeParaSelecionar.value = 10;
       }
       if (acaiEscolhido.value.nome == "Sorvete 500g") {
         quantidadeParaSelecionar.value = 999;
@@ -167,17 +167,9 @@ export default {
           <strong id="categoria">Sorvete:</strong>
           <div v-for="(item, index) in acais" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -191,17 +183,9 @@ export default {
           <strong id="categoria">Cremes:</strong>
           <div v-for="(item, index) in cremes" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -215,17 +199,9 @@ export default {
           <strong id="categoria">Frutas:</strong>
           <div v-for="(item, index) in frutas" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -239,17 +215,9 @@ export default {
           <strong id="categoria">Acompanhamentos:</strong>
           <div v-for="(item, index) in acompanhamentos" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -263,17 +231,9 @@ export default {
           <strong id="categoria">Coberturas:</strong>
           <div v-for="(item, index) in coberturas" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -290,12 +250,7 @@ export default {
         adicionar
       </button>
 
-      <button
-        id="butOpcoes2"
-        @click="limparDados()"
-        type="submit"
-        value="Submit"
-      >
+      <button id="butOpcoes2" @click="limparDados()" type="submit" value="Submit">
         voltar
       </button>
     </div>

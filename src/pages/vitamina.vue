@@ -28,15 +28,17 @@ export default {
 
     watch(acaiEscolhido, (novoValor, antigoValor) => {
       carrinho.pedidosParaSomar = acaiEscolhido.value;
+      pedidoTemp.value = []
 
       console.log(acaiEscolhido.value.nome);
 
-      if (acaiEscolhido.value.nome == "Vitamina 300ml Tradicional") {
+      if (acaiEscolhido.value.nome == "Vitamina 300ml Tradicional" || acaiEscolhido.value.nome == "Vitamina 500ml Tradicional") {
+        quantidadeParaSelecionar.value = 2;
+      }
+      else {
         quantidadeParaSelecionar.value = 99;
       }
-      if (acaiEscolhido.value.nome == "Vitamina 500ml Tradicional") {
-        quantidadeParaSelecionar.value = 99;
-      }
+
     });
 
     function salvarPedido() {
@@ -97,21 +99,17 @@ export default {
         <!---------------------------->
 
         <div v-if="acaiEscolhido != 'Escolha um'">
-          <strong id="categoria">Acompanhamentos:</strong>
+          <strong
+            v-if="acaiEscolhido.nome != 'Vitamina 300ml Tradicional' && acaiEscolhido.nome != 'Vitamina 500ml Tradicional'"
+            id="categoria">Acompanhamentos:</strong>
 
-          <div v-for="(item, index) in acompanhamentos" :key="item">
+          <div
+            v-if="acaiEscolhido.nome != 'Vitamina 300ml Tradicional' && acaiEscolhido.nome != 'Vitamina 500ml Tradicional'"
+            v-for="(item, index) in acompanhamentos" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -130,17 +128,9 @@ export default {
           </p>
           <div v-for="(item, index) in coberturas" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -152,20 +142,16 @@ export default {
           </div>
 
           <!---------------------------->
-          <strong id="categoria">Frutas:</strong>
-          <div v-for="(item, index) in frutas" :key="item">
+          <strong
+            v-if="acaiEscolhido.nome != 'Vitamina 300ml Tradicional' && acaiEscolhido.nome != 'Vitamina 500ml Tradicional'"
+            id="categoria">Frutas:</strong>
+          <div
+            v-if="acaiEscolhido.nome != 'Vitamina 300ml Tradicional' && acaiEscolhido.nome != 'Vitamina 500ml Tradicional'"
+            v-for="(item, index) in frutas" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -182,12 +168,7 @@ export default {
         adicionar
       </button>
 
-      <button
-        id="butOpcoes2"
-        @click="limparDados()"
-        type="submit"
-        value="Submit"
-      >
+      <button id="butOpcoes2" @click="limparDados()" type="submit" value="Submit">
         voltar
       </button>
     </div>

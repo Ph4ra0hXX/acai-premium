@@ -31,10 +31,10 @@ export default {
 
       console.log(acaiEscolhido.value.nome);
 
-      if (acaiEscolhido.value.nome == "Milk Shake 350ml") {
+      if (acaiEscolhido.value.nome == "Milk Shake 300ml") {
         quantidadeParaSelecionar.value = 4;
       }
-      if (acaiEscolhido.value.nome == "Milk Shake 600ml") {
+      if (acaiEscolhido.value.nome == "Milk Shake 500ml") {
         quantidadeParaSelecionar.value = 4;
       }
     });
@@ -105,17 +105,9 @@ export default {
           </p>
           <div v-for="(item, index) in acais" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -134,17 +126,9 @@ export default {
           </p>
           <div v-for="(item, index) in coberturas" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input
-                type="checkbox"
-                class="checkbox1"
-                id="adicional"
-                :value="item"
-                v-model="pedidoTemp"
-                :disabled="
-                  pedidoTemp.length >= quantidadeParaSelecionar &&
-                  pedidoTemp.indexOf(item) === -1
-                "
-              />
+              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
+                pedidoTemp.indexOf(item) === -1
+                " />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -161,12 +145,7 @@ export default {
         adicionar
       </button>
 
-      <button
-        id="butOpcoes2"
-        @click="limparDados()"
-        type="submit"
-        value="Submit"
-      >
+      <button id="butOpcoes2" @click="limparDados()" type="submit" value="Submit">
         voltar
       </button>
     </div>
