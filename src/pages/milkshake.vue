@@ -13,7 +13,14 @@ export default {
     const menu = menuStore();
 
     const pesoDoAcai = ref(menu.pesoDoMilkshake);
-    const acais = ref(menu.sorvete);
+    const acais = ref([
+      { nome: "Morango", id: 7, preco: 0.0, hash: "" },
+      { nome: "Chocolate", id: 7, preco: 0.0, hash: "" },
+      { nome: "Bombom", id: 7, preco: 0.0, hash: "" },
+      { nome: "Delícia de Abacaxi", id: 7, preco: 0.0, hash: "" },
+      { nome: "Brownie", id: 7, preco: 0.0, hash: "" },
+      { nome: "Ouro Branco", id: 7, preco: 0.0, hash: "" },
+    ]);
     const cremes = ref(menu.cremes);
     const frutas = ref(menu.frutas);
     const acompanhamentos = ref(menu.acompanhamentos);
@@ -105,9 +112,17 @@ export default {
           </p>
           <div v-for="(item, index) in acais" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
-                pedidoTemp.indexOf(item) === -1
-                " />
+              <input
+                type="checkbox"
+                class="checkbox1"
+                id="adicional"
+                :value="item"
+                v-model="pedidoTemp"
+                :disabled="
+                  pedidoTemp.length >= quantidadeParaSelecionar &&
+                  pedidoTemp.indexOf(item) === -1
+                "
+              />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -126,9 +141,17 @@ export default {
           </p>
           <div v-for="(item, index) in coberturas" :key="item">
             <label class="container-checkbox" id="textoPreco">
-              <input type="checkbox" class="checkbox1" id="adicional" :value="item" v-model="pedidoTemp" :disabled="pedidoTemp.length >= quantidadeParaSelecionar &&
-                pedidoTemp.indexOf(item) === -1
-                " />
+              <input
+                type="checkbox"
+                class="checkbox1"
+                id="adicional"
+                :value="item"
+                v-model="pedidoTemp"
+                :disabled="
+                  pedidoTemp.length >= quantidadeParaSelecionar &&
+                  pedidoTemp.indexOf(item) === -1
+                "
+              />
               <span class="checkmark"></span>
             </label>
             <label style="pointer-events: none" for="adicional">{{
@@ -145,7 +168,12 @@ export default {
         adicionar
       </button>
 
-      <button id="butOpcoes2" @click="limparDados()" type="submit" value="Submit">
+      <button
+        id="butOpcoes2"
+        @click="limparDados()"
+        type="submit"
+        value="Submit"
+      >
         voltar
       </button>
     </div>
