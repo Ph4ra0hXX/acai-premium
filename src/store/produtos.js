@@ -163,10 +163,10 @@ export const menuStore = defineStore("menu", {
   state: () => {
     return {
       pesoVitaminas: [
-        { nome: "Vitamina 300ml Tradicional", id: 11, preco: 12.0, hash: "" },
+        { nome: "Vitamina 300ml Tradicional", id: 11, preco: 14.0, hash: "" },
         { nome: "Vitamina 300ml Turbinada", id: 11, preco: 15.0, hash: "" },
-        { nome: "Vitamina 500ml Tradicional", id: 11, preco: 15.0, hash: "" },
-        { nome: "Vitamina 500ml Turbinada", id: 11, preco: 17.0, hash: "" },
+        { nome: "Vitamina 500ml Tradicional", id: 11, preco: 17.0, hash: "" },
+        { nome: "Vitamina 500ml Turbinada", id: 11, preco: 19.0, hash: "" },
       ],
       pesoDoMilkshake: [
         { nome: "Milk Shake 350ml", id: 8, preco: 12.0, hash: "" },
