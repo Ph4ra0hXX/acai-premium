@@ -164,13 +164,13 @@ export const menuStore = defineStore("menu", {
     return {
       pesoVitaminas: [
         { nome: "Vitamina 300ml Tradicional", id: 11, preco: 14.0, hash: "" },
-        { nome: "Vitamina 300ml Turbinada", id: 11, preco: 15.0, hash: "" },
+        { nome: "Vitamina 300ml Turbinada", id: 11, preco: 16.0, hash: "" },
         { nome: "Vitamina 500ml Tradicional", id: 11, preco: 17.0, hash: "" },
         { nome: "Vitamina 500ml Turbinada", id: 11, preco: 19.0, hash: "" },
       ],
       pesoDoMilkshake: [
-        { nome: "Milk Shake 350ml", id: 8, preco: 12.0, hash: "" },
-        { nome: "Milk Shake 600ml", id: 8, preco: 15.0, hash: "" },
+        { nome: "Milk Shake 350ml", id: 8, preco: 13.0, hash: "" },
+        { nome: "Milk Shake 600ml", id: 8, preco: 16.0, hash: "" },
       ],
       sorvete: [
         { nome: "Sorvete de Morango", id: 7, preco: 0.0, hash: "" },
@@ -191,6 +191,8 @@ export const menuStore = defineStore("menu", {
         { nome: "Sorvete de Paçoquinha", id: 7, preco: 0.0, hash: "" },
         { nome: "Sorvete de Doce de Leite", id: 7, preco: 0.0, hash: "" },
         { nome: "Sorvete de Pavê", id: 7, preco: 0.0, hash: "" },
+        { nome: "Sorvete de Maracujá", id: 7, preco: 0.0, hash: "" },
+        { nome: "Sorvete de Chiclete Com Banana", id: 7, preco: 0.0, hash: "" },
       ],
       sorveteCerto: [
         { nome: "Sorvete de Morango", id: 9, preco: 0.0, hash: "" },
@@ -279,6 +281,12 @@ export const menuStore = defineStore("menu", {
           preco: 0.0,
           hash: "",
         },
+        {
+          nome: "Açaí Mesclado de Ninho",
+          id: 1,
+          preco: 0.0,
+          hash: "",
+        },
       ],
       cremes: [
         {
@@ -289,6 +297,12 @@ export const menuStore = defineStore("menu", {
         },
         {
           nome: "Creme de Ninho",
+          id: 2,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Creme de Morango",
           id: 2,
           preco: 0.0,
           hash: "",
@@ -501,6 +515,30 @@ export const menuStore = defineStore("menu", {
           preco: 0.0,
           hash: "",
         },
+        {
+          nome: "Castanha Triturada",
+          id: 4,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Canudo Wafer",
+          id: 4,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Confete",
+          id: 4,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Flocos de Arroz",
+          id: 4,
+          preco: 0.0,
+          hash: "",
+        },
       ],
       acompanhamentoVitaminas: [
         {
@@ -591,6 +629,18 @@ export const menuStore = defineStore("menu", {
         },
         {
           nome: "Cobertura de chocolate com menta",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de Menta",
+          id: 5,
+          preco: 0.0,
+          hash: "",
+        },
+        {
+          nome: "Cobertura de Kiwi",
           id: 5,
           preco: 0.0,
           hash: "",
