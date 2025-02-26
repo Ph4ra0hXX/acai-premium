@@ -25,7 +25,7 @@
     <br />
     <br />
     Criado e desenvolvido por
-    <a id="nomeDev" href="https://www.instagram.com/wesleyj.dev/?hl=pt-br">
+    <a id="nomeDev" href="https://api.whatsapp.com/send?phone=5588997542121">
       Wesley Jonatha
     </a>
     <br />
