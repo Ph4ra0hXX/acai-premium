@@ -140,13 +140,13 @@ export const produtosStore = defineStore("produto", {
           descricao: "Monte do seu jeito",
           url: "/vitamina",
         },
-        {
+       /* {
           id: 4,
           nome: "MILKSHAKE",
           img: "food4.webp",
           descricao: "Refrescante",
           url: "/milkshake",
-        },
+        }, */
         {
           id: 5,
           nome: "BEBIDAS",
@@ -859,3 +859,4 @@ export const menuStore = defineStore("menu", {
     };
   },
 });
+
