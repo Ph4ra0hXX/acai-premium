@@ -488,7 +488,7 @@ export const menuStore = defineStore("menu", {
         {
           nome: "Batom Garoto",
           id: 4,
-          preco: 1.5,
+          preco: 2.5,
           hash: "",
         },
         {
@@ -859,4 +859,5 @@ export const menuStore = defineStore("menu", {
     };
   },
 });
+
 
